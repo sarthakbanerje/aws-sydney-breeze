@@ -16,7 +16,7 @@ pipeline {
                 echo 'Deploy AWS Stack'
                 sh '''
                     aws --version
-
+                    terraform --version
                 '''
             }
         }
