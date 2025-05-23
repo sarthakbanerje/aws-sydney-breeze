@@ -5,10 +5,10 @@ pipeline {
         stage('AWS-Deploy') {
             agent {
                 docker {
-//                    image 'sarthakbanerjee/custom-terraform-image:1'
+                    image 'sarthakbanerjee/custom-terraform-image:1'
 //                    args "--entrypoint='/bin/bash'"
 //                    reuseNode true
-                    image 'amazon/aws-cli'
+//                    image 'amazon/aws-cli'
                     args "--entrypoint=''"
                 }
             }
