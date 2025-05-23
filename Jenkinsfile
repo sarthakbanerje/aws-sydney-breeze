@@ -9,6 +9,7 @@ pipeline {
 //                    args "--entrypoint='/bin/bash'"
 //                    reuseNode true
                     image 'amazon/aws-cli'
+                    args "--entrypoint=''"
                 }
             }
             steps {
