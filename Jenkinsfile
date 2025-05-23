@@ -7,6 +7,7 @@ pipeline {
                 docker {
                     image 'sarthakbanerjee/custom-terraform-image:1'
                     args "--entrypoint='/bin/bash'"
+                    reuseNode true
                 }
             }
             steps {
