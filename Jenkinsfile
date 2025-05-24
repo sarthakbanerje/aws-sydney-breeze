@@ -13,16 +13,16 @@ pipeline {
                 echo 'Deploy AWS Stack'
 //Either of the block to be executed for creation or deletion of stack
                 withCredentials([usernamePassword(credentialsId: 'aws-jenkins-sarthakanz', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-                    sh '''
-                        aws --version
-                        terraform --version
-                        terraform init
-                        terraform plan
-                        terraform apply --auto-approve
-                    '''
                     // sh '''
-                    //     terraform destroy --auto-approve
+                    //     aws --version
+                    //     terraform --version
+                    //     terraform init
+                    //     terraform plan
+                    //     terraform apply --auto-approve
                     // '''
+                    sh '''
+                        terraform destroy --auto-approve
+                    '''
                 }
             }
         }
