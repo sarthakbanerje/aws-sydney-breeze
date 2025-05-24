@@ -18,5 +18,7 @@ terraform {
 
 provider "aws" {
 	region = "us-east-1"
-	//profile = "personal-admin"
+	//Using Jenkins credential while running from pipeline, hence commenting out profile
+  //if need to run directly from terminal need to use applicable profile
+  //profile = "personal-admin"  
 }
