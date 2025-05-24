@@ -14,10 +14,15 @@ pipeline {
             }
             steps {
                 echo 'Deploy AWS Stack'
-                sh '''
-                    aws --version
-                    terraform --version
-                '''
+                withCredentials([usernamePassword(credentialsId: 'aws-jenkins-sarthakanz', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+                    sh '''
+                        aws --version
+                        terraform --version
+                        terraform init
+                        terraform plan
+                        terraform apply
+                    '''
+                }
             }
         }
     }
